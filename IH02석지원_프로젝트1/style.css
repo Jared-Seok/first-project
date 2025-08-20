@@ -1,0 +1,177 @@
+/* style.css */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Pretendard', sans-serif;
+    color: #343a40;
+}
+
+h2 {
+    color: #0d031f;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-height: 500px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section h1, .hero-section p {
+    color: white;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+}
+
+/* [수정] Hero 섹션을 제외한 나머지 섹션에만 애니메이션 적용 */
+section:not(.hero-section) {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 순서대로 나타나도록 animation-delay 설정 */
+#about {
+    animation-delay: 0.2s;
+}
+#skills {
+    animation-delay: 0.4s;
+}
+#projects {
+    animation-delay: 0.6s;
+}
+#interests {
+    animation-delay: 0.8s;
+}
+#contact {
+    animation-delay: 1.0s;
+}
+
+/* Card 스타일 */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* [추가] Badge 스타일 및 호버 효과 */
+.badge {
+    padding: 0.6em 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Contact Section 스타일 */
+#contact {
+    background-color: #212529;
+}
+
+#contact h2 {
+    color: #ffffff;
+}
+
+#contact h2::after {
+    background-color: #007bff;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-info p:hover {
+    color: #007bff; 
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+.skill-item .form-label {
+    font-weight: 500;
+    color: #495057;
+    transition: color 0.3s ease;
+}
+
+.progress-bar {
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover .form-label {
+    color: #007bff; 
+}
+
+.skill-item:hover .progress-bar {
+    filter: brightness(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+}
